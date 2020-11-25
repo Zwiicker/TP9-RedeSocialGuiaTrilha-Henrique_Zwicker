@@ -1,0 +1,38 @@
+﻿@model IEnumerable<RedeSocialGuiaTrilha.Core.Models.PostModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Postagens dos Guias</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Fazer Nova Postagem</a>
+</p>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <h5>Email de Contato:</h5>
+                    <strong>@Html.DisplayFor(modelItem => item.UserName)</strong>
+                    <br />
+                    <img src="@item.Picture" style="max-width:184px; height:auto" />
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Text)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.PublishDateTime)
+                    <br />
+                    @if (item.UserName == User.Identity.Name)
+                    {
+                <span>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark btn-sm">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark btn-sm">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                </span>}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200910213516_PostsMigration.cs" />
+    <Compile Remove="Migrations\20200910213516_PostsMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200916011736_ProfileMigration.cs" />
+    <Compile Remove="Migrations\20200916011736_ProfileMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200916011951_ProfileMigration.cs" />
+    <Compile Remove="Migrations\20200916011951_ProfileMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200916012301_ProfileMigration.cs" />
+    <Compile Remove="Migrations\20200916012301_ProfileMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedeSocialGuiaTrilha.Core\RedeSocialGuiaTrilha.Core.csproj" />
+  </ItemGroup>
+
+</Project>

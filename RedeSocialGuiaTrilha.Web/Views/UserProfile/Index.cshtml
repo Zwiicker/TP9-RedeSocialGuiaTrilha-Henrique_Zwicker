@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RedeSocialGuiaTrilha.Core.Models.UserProfileModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lista de Guias</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Criar Perfil na Lista de Guias</a>
+</p>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    <img src="@item.Avatar" style="max-width:184px; height:auto" />
+                    <br />
+                    <h5>Nome do Guia:</h5>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.LastName)
+                    <br />
+                    <h5>Email de Contato:</h5>
+                    <strong>@Html.DisplayFor(modelItem => item.UserName)</strong>
+                    <br />
+                    <h5>Sobre mim:</h5>
+                    <strong>
+                        @Html.DisplayFor(modelItem => item.AboutMe)
+                    </strong>
+                    <br />
+                    @if (item.UserName == User.Identity.Name)
+                    {
+                    <span>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </span>}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
