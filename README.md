@@ -1,6 +1,6 @@
 ## Sobre
 
-Aplicação de uma Rede Social sobre Trilhas em C#, ASP.NET, banco de dados Azure e utilizando os conceitos MVC.
+Aplicação de uma Rede Social sobre Trilhas utilizando os conceitos MVC, usando C#, o framwork ASP.NET, e o banco de dados Azure.
 
 <br /><br />
 MVC:
